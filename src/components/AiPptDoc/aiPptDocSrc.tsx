@@ -3,10 +3,7 @@ export interface AiPptDocArgs {
   sk: string;
 }
 
-export const genAiPptDocSrc = ({
-  ak,
-  sk,
-}: AiPptDocArgs) => `<html>
+export const genAiPptDocSrc = ({ ak, sk }: AiPptDocArgs) => `<html>
   <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
     <script src="https://aippt-international-api-static.aippt.cn/aippt-iframe-sdk.js"></script>
@@ -14,15 +11,10 @@ export const genAiPptDocSrc = ({
   </head>
 
   <body>
-    <div id="aippt-e"></div>  
+    
   </body>
 
   <script>
-    window.onpopstate = function (event) {
-      console.log("onpopstate 发生了变化。");
-      // event.state 包含了状态对象
-      console.log(event.state);
-    };
 
     function generateHmacSHA1Base64(key, data) {
       // 使用crypto-js创建HMAC-SHA1哈希，并直接转换为Base64编码的字符串
@@ -80,7 +72,7 @@ export const genAiPptDocSrc = ({
           code: code,
           editorModel: true,
           scene_auth: false,
-          container: document.getElementById("aippt-e"),
+          
           onMessage(eventType, data) {
             console.log(eventType, data);
             if (eventType == "CHARGING") {
