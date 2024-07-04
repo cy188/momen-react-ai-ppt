@@ -16,6 +16,9 @@ const iframeInlineStyle: React.CSSProperties = {
 };
 
 export function AiPptDoc({ globalData }: AiPptDocProps) {
+
+  console.log("globalData: ", globalData)
+
   return (
     <iframe
       style={iframeInlineStyle}
