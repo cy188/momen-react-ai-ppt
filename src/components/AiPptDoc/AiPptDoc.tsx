@@ -6,7 +6,6 @@ import { genAiPptDocSrc } from "./aiPptDocSrc";
 interface AiPptDocProps {
   globalData: Record<string, any>;
   setGlobalData: (newValue: any) => void;
-  value?: string;
 }
 
 const iframeInlineStyle: React.CSSProperties = {
@@ -16,9 +15,6 @@ const iframeInlineStyle: React.CSSProperties = {
 };
 
 export function AiPptDoc({ globalData }: AiPptDocProps) {
-
-  console.log("globalData: ", globalData)
-
   return (
     <iframe
       style={iframeInlineStyle}
