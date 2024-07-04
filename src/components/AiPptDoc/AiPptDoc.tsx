@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-empty-pattern */
 
-import { genAiPptDocSrc } from './aiPptDocSrc';
+import { genAiPptDocSrc } from "./aiPptDocSrc";
 
 interface AiPptDocProps {
   globalData: Record<string, any>;
@@ -10,9 +10,9 @@ interface AiPptDocProps {
 }
 
 const iframeInlineStyle: React.CSSProperties = {
-  border: '0px solid',
-  height: '100%',
-  width: '100%',
+  border: "0px solid",
+  height: "100%",
+  width: "100%",
 };
 
 export function AiPptDoc({ globalData }: AiPptDocProps) {
