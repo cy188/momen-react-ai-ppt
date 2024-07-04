@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable no-empty-pattern */
 
 import { genAiPptDocSrc } from "./aiPptDocSrc";
 
 interface AiPptDocProps {
   globalData: Record<string, any>;
   setGlobalData: (newValue: any) => void;
+  value?: string;
 }
 
 const iframeInlineStyle: React.CSSProperties = {
