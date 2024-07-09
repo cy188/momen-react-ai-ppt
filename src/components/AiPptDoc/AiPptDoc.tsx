@@ -25,7 +25,7 @@ export function AiPptDoc({ globalData }: AiPptDocProps) {
     //   })}
     // />
     <div>
-      ak: {globalData.ak}; sk: {globalData.sk};
+      hello world
     </div>
   );
 }
