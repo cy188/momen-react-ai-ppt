@@ -6,7 +6,7 @@
 interface AiPptDocProps {
   globalData: Record<string, any>;
   setGlobalData: (newValue: any) => void;
-  value?: string;
+  // value?: string;
 }
 
 // const iframeInlineStyle: React.CSSProperties = {
@@ -15,7 +15,7 @@ interface AiPptDocProps {
 //   width: "100%",
 // };
 
-export function AiPptDoc({ globalData}: AiPptDocProps) {
+export function AiPptDoc({ globalData }: AiPptDocProps) {
   return (
     // <iframe
     //   style={iframeInlineStyle}
@@ -25,8 +25,7 @@ export function AiPptDoc({ globalData}: AiPptDocProps) {
     //   })}
     // />
     <div>
-      ak: {globalData.ak};
-      sk: {globalData.sk};
+      ak: {globalData.ak}; sk: {globalData.sk};
     </div>
   );
 }
