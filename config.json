@@ -1,7 +1,7 @@
 {
   "customComponentItems": {
     "AiPptDoc": {
-      "name": "Aippt",
+      "name": "AiPptDoc",
       "imagePath": "preview/aidoc.jpeg",
       "description": "AI PPT IFrame Component",
       "itemInputs": [
@@ -12,5 +12,5 @@
       ]
     }
   },
-  "version": "0.0.22"
+  "version": "0.0.23"
 }
