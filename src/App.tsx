@@ -6,12 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <div style={{ height: '100%', width: '100%' }}>
-        <AiPptDoc
-          globalData={{}}
-          setGlobalData={() => {
-            //
-          }}
-        />
+        <AiPptDoc/>
       </div>
     </BrowserRouter>
   );
