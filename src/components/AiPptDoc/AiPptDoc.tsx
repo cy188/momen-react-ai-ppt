@@ -7,7 +7,7 @@ interface AiPptDocProps {
 
 export function AiPptDoc({ globalData,setGlobalData }: AiPptDocProps) {
   function handleClick() {
-    setGlobalData(111)
+    setGlobalData({...globalData,ak: 1111})
   }
   return (
     <div>
