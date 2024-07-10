@@ -12,9 +12,9 @@ export function AiPptDoc({ globalData,setGlobalData }: AiPptDocProps) {
   return (
     <div>
       hello world
-      ak: {globalData.ak}
-      sk: {globalData.sk}
-      <button onClick={handleClick}>设置全局数据</button>
+      ak: {globalData.ak} <br />
+      sk: {globalData.sk} <br />
+      <button onClick={handleClick}>设置全局数据ak为: 1111</button>
     </div>
   );
 }
