@@ -5,10 +5,10 @@ interface AiPptDocProps {
   setGlobalData: (newValue: any) => void;
 }
 
-export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
-  function handleClick() {
-    setGlobalData({ ...globalData, ak: 1111 });
-  }
+export function AiPptDoc({ globalData }: AiPptDocProps) {
+  // function handleClick() {
+  //   setGlobalData({ ...globalData, ak: 1111 });
+  // }
   return (
     <div>
       <div>
@@ -20,7 +20,7 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
         <html>
           <head></head>
           <body>
-            <div onclick="${handleClick()}">hello 111<div>
+            <div>hello 111<div>
           </body>
         </html>`}
       />
