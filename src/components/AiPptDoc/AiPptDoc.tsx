@@ -53,7 +53,7 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
             <title>Document</title>
           </head>
           <body>
-            <div id="aippt-e" style="width: 900px; height: 900px"></div>
+            <div id="aippt-e" style="width: 100%; height: 100%;"></div>
           </body>
           <script>
 
@@ -126,9 +126,6 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
                     fc_plate: [2003, 2011, 2014, 2024],
                   },
                 });
-
-              var element = document.getElementById("aippt-iframe-modal");
-              element.style.top = "120px"; // 设置元素的 top 为 20px
             } catch (e) {
               console.log(e);
             }
