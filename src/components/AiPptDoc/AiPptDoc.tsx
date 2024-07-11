@@ -48,16 +48,15 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
         ref={iframeRef}
         style={iframeInlineStyle}
         srcDoc={`
-        <html lang="en">
+        <html lang="en" style="width: 100%;height:100%;">
           <head>
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
             <script src="https://aippt-international-api-static.aippt.cn/aippt-iframe-sdk.js"></script>
-            <!-- <script src="https://aippt-domestic.aippt.com/static/js/aippt-iframe-sdk.js?xxx=3bb"></script> -->
             <title>Document</title>
           </head>
-          <body>
+          <body style="width: 100%;height:100%;">
             <div id="aippt-e" style="width: 100%; height: 100%;"></div>
           </body>
           <script>
