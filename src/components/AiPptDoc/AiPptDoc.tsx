@@ -17,11 +17,8 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
 
   useEffect(() => {
     const handleMessage = (event: any) => {
-      if (event.origin === '*') {
-        // 处理消息
-        if (event.data.type === 'CALL_METHOD') {
-          setGloablDataFun(event.data.payload);
-        }
+      if (event.data.type === "CALL_METHOD") {
+        setGloablDataFun(event.data.payload);
       }
     };
 
