@@ -12,6 +12,11 @@ const iframeInlineStyle: React.CSSProperties = {
   width: "100%",
 };
 
+const divContainer: React.CSSProperties = {
+  height: "100%",
+  width: "100%",
+};
+
 export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
   const iframeRef = useRef(null);
 
@@ -34,7 +39,7 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
   };
 
   return (
-    <div>
+    <div style={divContainer}>
       <div>
         ak: {globalData.ak} <br />
         sk: {globalData.sk} <br />
