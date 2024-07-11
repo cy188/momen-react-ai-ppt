@@ -5,10 +5,16 @@ interface AiPptDocProps {
   setGlobalData: (newValue: any) => void;
 }
 
-export function AiPptDoc({ globalData }: AiPptDocProps) {
-  // function handleClick() {
-  //   setGlobalData({ ...globalData, ak: 1111 });
-  // }
+const iframeInlineStyle: React.CSSProperties = {
+  border: "0px solid",
+  height: "100%",
+  width: "100%",
+};
+
+export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
+  function handleClick() {
+    setGlobalData({ ...globalData, ak: 1111 });
+  }
   return (
     <div>
       <div>
@@ -16,11 +22,12 @@ export function AiPptDoc({ globalData }: AiPptDocProps) {
         sk: {globalData.sk} <br />
       </div>
       <iframe
+        style={iframeInlineStyle}
         srcDoc={`
         <html>
           <head></head>
           <body>
-            <div>hello 111<div>
+            <div onclick="${handleClick()}">hello 111<div>
           </body>
         </html>`}
       />
