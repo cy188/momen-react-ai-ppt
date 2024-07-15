@@ -40,10 +40,6 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
 
   return (
     <div style={divContainer}>
-      <div>
-        ak: {globalData.ak} <br />
-        sk: {globalData.sk} <br />
-      </div>
       <iframe
         ref={iframeRef}
         style={iframeInlineStyle}
