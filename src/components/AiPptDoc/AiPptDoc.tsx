@@ -12,10 +12,6 @@ const iframeInlineStyle: React.CSSProperties = {
   width: "100%",
 };
 
-const divContainer: React.CSSProperties = {
-  height: "100%",
-  width: "100%",
-};
 
 export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
   const iframeRef = useRef(null);
@@ -39,12 +35,12 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
   };
 
   return (
-    <div style={divContainer}>
+    <div>
       <iframe
         ref={iframeRef}
         style={iframeInlineStyle}
         srcDoc={`
-        <html lang="en">
+        <html lang="en" style="width: 100vw;height:calc(100vh - 60px);">
           <head>
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -52,8 +48,8 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
             <script src="https://aippt-international-api-static.aippt.cn/aippt-iframe-sdk.js"></script>
             <title>Document</title>
           </head>
-          <body>
-            <div id="aippt-e" style="width: 100%; height: 100%;"></div>
+          <body style="width: 100%;height:100%;">
+            <div id="aippt-e" style="width: 100vw;height:calc(100vh - 60px);"></div>
           </body>
           <script>
 
