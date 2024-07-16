@@ -11,12 +11,13 @@ const iframeInlineStyle: React.CSSProperties = {
   height: "100%",
   width: "100%",
 };
+
 const divStyle: React.CSSProperties = {
   height: "calc(100vh - 60px)",
      width: "100%",
      overflow: "hidden",
      position: "fixed",
-     top: "60px",
+     top: "56px",
 };
 
 export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
