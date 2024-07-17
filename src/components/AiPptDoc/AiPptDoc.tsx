@@ -14,10 +14,10 @@ const iframeInlineStyle: React.CSSProperties = {
 
 const divStyle: React.CSSProperties = {
   height: "calc(100vh - 60px)",
-     width: "100%",
-     overflow: "hidden",
-     position: "fixed",
-     top: "56px",
+  width: "100%",
+  overflow: "hidden",
+  position: "fixed",
+  top: "56px",
 };
 
 export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
@@ -56,7 +56,7 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
             <title>Document</title>
           </head>
           <body style="width: 100%;height:100%;">
-            <div id="aippt-e" style="width: 100vw;height:calc(100vh - 60px);"></div>
+            <div id="aippt-e" style="width: 100vw;height:100%;"></div>
           </body>
           <script>
 
