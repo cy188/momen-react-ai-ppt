@@ -47,7 +47,7 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
         ref={iframeRef}
         style={iframeInlineStyle}
         srcDoc={`
-        <html lang="en" style="width: 100vw;height:calc(100vh - 60px);">
+        <html lang="en" style="width:calc(100vw - 60px);height:calc(100vh - 60px);overflow: hidden;">
           <head>
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
