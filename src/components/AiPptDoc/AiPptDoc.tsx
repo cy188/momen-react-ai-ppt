@@ -44,6 +44,10 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
 
   return (
     <div style={divStyle}>
+      <div>
+        globalData curr_account_id: {globalData.curr_account_id}
+        globalData sha1code: {globalData.sha1code}
+      </div>
       <iframe
         ref={iframeRef}
         style={iframeInlineStyle}
