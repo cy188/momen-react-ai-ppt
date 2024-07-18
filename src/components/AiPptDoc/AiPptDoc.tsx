@@ -59,6 +59,12 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
             <div id="aippt-e" style="width: 100vw;height:100%;"></div>
           </body>
           <script>
+          function getCurrentTimestampInSeconds() {
+            const now = new Date() // 获取当前时间
+            return Math.floor(now.getTime() / 1000) // getTime()返回毫秒时间戳，除以1000转换为秒，并使用Math.floor取整
+          }
+          
+          let times = getCurrentTimestampInSeconds()
 
           const hmacSHA1Base64 = ${globalData.sha1code};
 
