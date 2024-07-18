@@ -80,9 +80,9 @@ export const genAiPptDocSrc = ({
             }
           }
 
-          console.log("全局数据 curr_account_id: ", curr_account_id)
-          console.log("全局数据 sha1code: ", sha1code)
-          
+          console.log("全局数据 curr_account_id: ", ${curr_account_id})
+          console.log("全局数据 sha1code: ", ${sha1code})
+
           </script>
         </html>
 `;
