@@ -120,6 +120,8 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
               console.log(e);
             }
           }
+
+          console.log("全局数据: ", globalData)
           </script>
         </html>`}
       />
