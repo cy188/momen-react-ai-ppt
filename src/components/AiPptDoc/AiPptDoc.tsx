@@ -60,26 +60,7 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
           </body>
           <script>
 
-          function generateHmacSHA1Base64(key, data) {
-            // 使用crypto-js创建HMAC-SHA1哈希，并直接转换为Base64编码的字符串
-            const hmac = CryptoJS.HmacSHA1(data, key);
-            return hmac.toString(CryptoJS.enc.Base64);
-          }
-
-          function getCurrentTimestampInSeconds() {
-            const now = new Date(); // 获取当前时间
-            return Math.floor(now.getTime() / 1000); // getTime()返回毫秒时间戳，除以1000转换为秒，并使用Math.floor取整
-          }
-
-          const sk = "Y0CnysjshsauEkzExYGxXL8a8XSITsyz"; // 密钥
-
-          let times = getCurrentTimestampInSeconds();
-
-          console.log('time: ', times)
-
-          let message = 'GET@/api/grant/code/@' + times;
-
-          const hmacSHA1Base64 = generateHmacSHA1Base64(sk, message);
+          const hmacSHA1Base64 = ${globalData.sha1code};
 
           // 设置请求头
           const headers = new Headers({
@@ -91,7 +72,7 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
           let code = "";
 
           // 使用fetch发送GET请求
-          fetch("https://co.aippt.com/api/grant/code?uid=1&channel=", {
+          fetch("https://co.aippt.com/api/grant/code?uid=${globalData.curr_account_id}&channel=", {
             method: "GET", // 显式设置请求方法为GET
             headers: headers, // 传入上面创建的headers对象
           })
