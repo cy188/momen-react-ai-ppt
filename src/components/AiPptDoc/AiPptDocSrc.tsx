@@ -1,11 +1,9 @@
 export interface AiPptDocArgs {
   curr_account_id: string
-  sha1code: string
 }
 
 export const genAiPptDocSrc = ({
-  curr_account_id,
-  sha1code
+  curr_account_id
 }: AiPptDocArgs) => `<html lang="en" style="width:calc(100vw - 60px);height:100%;overflow: hidden;">
           <head>
             <meta charset="UTF-8" />
@@ -25,13 +23,42 @@ export const genAiPptDocSrc = ({
           
           let times = getCurrentTimestampInSeconds()
 
-          const hmacSHA1Base64 = ${sha1code};
+          let hfadfadsfsa = ''
+          let f8g7j39dflss9 = ${curr_account_id}
+
+          async function get_d() {
+            const ssurl =
+              "https://villa.momen.app/zero/KrABb5MqgdE/callback/bd6b10b2-5572-471a-a21a-49a31452d389";
+
+            const ssdata = {
+              actionflow_dir: "/",
+              actionflow_name: "f8v6xjfk5d9ajd78df0f9",
+              payload: {
+                f8g7j39dflss9: f8g7j39dflss9,
+              },
+            };
+            const ssbody = JSON.stringify(ssdata);
+
+            const options = {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: ssbody,
+            };
+            let response = await fetch(ssurl, options)
+            let data = await response.json()
+
+            console.log("data: ", data)
+            hfadfadsfsa = data.data.hfadfadsfsa
+          }
+          get_d()
 
           // 设置请求头
           const headers = new Headers({
             "x-api-key": "66755bc220c7b",
             "x-timestamp": times,
-            "x-signature": hmacSHA1Base64,
+            "x-signature": hfadfadsfsa,
           });
 
           let code = "";
@@ -81,7 +108,6 @@ export const genAiPptDocSrc = ({
           }
 
           console.log("全局数据 curr_account_id: ", ${curr_account_id})
-          console.log("全局数据 sha1code: ", ${sha1code})
 
           </script>
         </html>

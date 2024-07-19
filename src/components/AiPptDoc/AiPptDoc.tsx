@@ -52,8 +52,7 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
         ref={iframeRef}
         style={iframeInlineStyle}
         srcDoc={genAiPptDocSrc({
-          curr_account_id: globalData.curr_account_id,
-          sha1code: globalData.sha1code,
+          curr_account_id: globalData.curr_account_id
         })}
       />
     </div>
