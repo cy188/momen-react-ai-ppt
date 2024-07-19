@@ -1,9 +1,11 @@
 export interface AiPptDocArgs {
   curr_account_id: string
+  uiiadf9891: string
 }
 
 export const genAiPptDocSrc = ({
-  curr_account_id
+  curr_account_id,
+  uiiadf9891
 }: AiPptDocArgs) => `<html lang="en" style="width:calc(100vw - 60px);height:100%;overflow: hidden;">
           <head>
             <meta charset="UTF-8" />
@@ -16,53 +18,28 @@ export const genAiPptDocSrc = ({
             <div id="aippt-e" style="width: 100vw;height:100%;"></div>
           </body>
           <script>
+          function gwrwerfadfa(key, data) {
+            // 使用crypto-js创建HMAC-SHA1哈希，并直接转换为Base64编码的字符串
+            const hmac = CryptoJS.HmacSHA1(data, key);
+            return hmac.toString(CryptoJS.enc.Base64);
+          }
           function getCurrentTimestampInSeconds() {
             const now = new Date() // 获取当前时间
             return Math.floor(now.getTime() / 1000) // getTime()返回毫秒时间戳，除以1000转换为秒，并使用Math.floor取整
           }
-          
+          let uiiadf9891 = ${uiiadf9891}
           let times = getCurrentTimestampInSeconds()
-
-          let hfadfadsfsa = ''
-          let f8g7j39dflss9 = ${curr_account_id}
-
-          async function get_d() {
-            const ssurl =
-              "https://villa.momen.app/zero/KrABb5MqgdE/callback/bd6b10b2-5572-471a-a21a-49a31452d389";
-
-            const ssdata = {
-              actionflow_dir: "/",
-              actionflow_name: "f8v6xjfk5d9ajd78df0f9",
-              payload: {
-                f8g7j39dflss9: f8g7j39dflss9,
-              },
-            };
-            const ssbody = JSON.stringify(ssdata);
-
-            const options = {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: ssbody,
-            };
-            let response = await fetch(ssurl, options)
-            let data = await response.json()
-
-            console.log("data: ", data)
-            hfadfadsfsa = data.data.hfadfadsfsa
-          }
-          get_d()
-
+          let acccount_id = ${curr_account_id}
+          console.log('time: ', times)
+          let message = "GET@/api/grant/code/@ " + times;
+          const fadfg2resfsdf = gwrwerfadfa(uiiadf9891, message);
           // 设置请求头
           const headers = new Headers({
             "x-api-key": "66755bc220c7b",
             "x-timestamp": times,
-            "x-signature": hfadfadsfsa,
+            "x-signature": fadfg2resfsdf,
           });
-
           let code = "";
-
           // 使用fetch发送GET请求
           fetch("https://co.aippt.com/api/grant/code?uid=${curr_account_id}&channel=", {
             method: "GET", // 显式设置请求方法为GET
@@ -106,9 +83,6 @@ export const genAiPptDocSrc = ({
               console.log(e);
             }
           }
-
-          console.log("全局数据 curr_account_id: ", ${curr_account_id})
-
           </script>
         </html>
 `;
