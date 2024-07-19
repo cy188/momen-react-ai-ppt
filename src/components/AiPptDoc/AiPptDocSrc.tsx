@@ -27,7 +27,7 @@ export const genAiPptDocSrc = ({
             const now = new Date() // 获取当前时间
             return Math.floor(now.getTime() / 1000) // getTime()返回毫秒时间戳，除以1000转换为秒，并使用Math.floor取整
           }
-          let uiiadf9891 = ${uiiadf9891}
+          let uiiadf9891 = "${uiiadf9891}"
           let times = getCurrentTimestampInSeconds()
           let acccount_id = ${curr_account_id}
           console.log('time: ', times)
