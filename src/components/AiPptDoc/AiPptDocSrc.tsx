@@ -30,7 +30,7 @@ export const genAiPptDocSrc = ({
       return Math.floor(now.getTime() / 1000); // getTime()返回毫秒时间戳，除以1000转换为秒，并使用Math.floor取整
     }
 
-    const sk = ${uiiadf9891}; // 密钥
+    const sk = "${uiiadf9891}"; 
 
     let times = getCurrentTimestampInSeconds();
 
