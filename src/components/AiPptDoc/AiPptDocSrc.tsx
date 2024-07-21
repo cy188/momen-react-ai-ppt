@@ -86,7 +86,7 @@ export const genAiPptDocSrc = ({
                 actionflow_dir: "/",
                 actionflow_name: "fh76saj19kf0sfdl6k9",
                 payload: {
-                  hufidl71lj9nm5k3j1: 1000000000000001,
+                  hufidl71lj9nm5k3j1: ${curr_account_id},
                 },
               };
               const body = JSON.stringify(data);
