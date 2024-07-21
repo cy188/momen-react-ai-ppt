@@ -48,7 +48,7 @@ export function AiPptDoc({ globalData, setGlobalData }: AiPptDocProps) {
         ref={iframeRef}
         style={iframeInlineStyle}
         srcDoc={genAiPptDocSrc({
-          curr_account_id: globalData.curr_account_id,
+          l2j3l4jh5h123l1jlj: globalData.curr_account_id,
           uiiadf9891: globalData.sk
         })}
       />
