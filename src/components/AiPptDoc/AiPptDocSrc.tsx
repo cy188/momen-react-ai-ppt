@@ -6,43 +6,42 @@ export interface AiPptDocArgs {
 export const genAiPptDocSrc = ({
   curr_account_id,
   uiiadf9891
-}: AiPptDocArgs) => `<html lang="en" style="width:calc(100vw - 60px);height:100%;overflow: hidden;">
-          <head>
-            <meta charset="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
-            <script src="https://aippt-international-api-static.aippt.cn/aippt-iframe-sdk.js"></script>
-            <title>Document</title>
-          </head>
-          <body style="width: 100%;height:100%;">
-            <div id="aippt-e" style="width: 100vw;height:100%;"></div>
-          </body>
-          <script>
-          
+}: AiPptDocArgs) => `<html
+  lang="en"
+  style="width: calc(100vw - 60px); height: 100%; overflow: hidden"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+    <script src="https://aippt-international-api-static.aippt.cn/aippt-iframe-sdk.js"></script>
+    <title>Document</title>
+  </head>
+  <body style="width: 100%; height: 100%">
+    <div id="aippt-e" style="width: 100vw; height: 100%"></div>
+  </body>
+  <script>
     function generateHmacSHA1Base64(key, data) {
-      // 使用crypto-js创建HMAC-SHA1哈希，并直接转换为Base64编码的字符串
       const hmac = CryptoJS.HmacSHA1(data, key);
       return hmac.toString(CryptoJS.enc.Base64);
     }
 
     function getCurrentTimestampInSeconds() {
-      const now = new Date(); // 获取当前时间
-      return Math.floor(now.getTime() / 1000); // getTime()返回毫秒时间戳，除以1000转换为秒，并使用Math.floor取整
+      const now = new Date(); 
+      return Math.floor(now.getTime() / 1000); 
     }
 
-    const sk = "${uiiadf9891}"; 
+    const sk = "${uiiadf9891}";
 
     let times = getCurrentTimestampInSeconds();
 
-    console.log('time: ', times)
+    console.log("time: ", times);
 
     let message = "GET@/api/grant/code/@" + times;
 
     const hmacSHA1Base64 = generateHmacSHA1Base64(sk, message);
 
-    console.log("hash: ", hmacSHA1Base64)
-
-    // 设置请求头
+    console.log("hash: ", hmacSHA1Base64);
     const headers = new Headers({
       "x-api-key": "66755bc220c7b",
       "x-timestamp": times,
@@ -50,23 +49,20 @@ export const genAiPptDocSrc = ({
     });
 
     let code = "";
-
-    // 使用fetch发送GET请求
     fetch("https://co.aippt.com/api/grant/code?uid=${curr_account_id}&channel=", {
-      method: "GET", // 显式设置请求方法为GET
-      headers: headers, // 传入上面创建的headers对象
+      method: "GET", 
+      headers: headers, 
     })
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
-        return response.json(); // 假设服务器响应的是JSON格式数据
+        return response.json(); 
       })
       .then((data) => {
-        console.log("data: ", data); // 处理解析后的JSON数据
+        console.log("data: ", data); 
         code = data.data.code;
 
-        // 执行下面的函数
         frame();
       });
 
@@ -81,9 +77,34 @@ export const genAiPptDocSrc = ({
           scene_auth: false,
           container: document.getElementById("aippt-e"),
           onMessage(eventType, data) {
-            console.log(eventType, data);
-            if (eventType == "CHARGING") {
-              console.log("扣费啦: ", data);
+            if (eventType == "GENERATE_PPT_SUCCESS") {
+
+              const url =
+                "https://villa.momen.app/zero/KrABb5MqgdE/callback/bd6b10b2-5572-471a-a21a-49a31452d389";
+
+              const data = {
+                actionflow_dir: "/",
+                actionflow_name: "fh76saj19kf0sfdl6k9",
+                payload: {
+                  hufidl71lj9nm5k3j1: 1000000000000001,
+                },
+              };
+              const body = JSON.stringify(data);
+              const options = {
+                method: "POST", 
+                headers: {
+                  "Content-Type": "application/json", 
+                },
+                body: body, 
+              };
+
+
+              fetch(url, options)
+                .then((response) => {
+                  return response.json(); 
+                })
+                .then((data) => {
+                });
             }
           },
           options: {
@@ -92,11 +113,12 @@ export const genAiPptDocSrc = ({
         });
 
         var element = document.getElementById("aippt-iframe-modal");
-        element.style.top = "120px"; // 设置元素的 top 为 20px
+        element.style.top = "120px";
       } catch (e) {
         console.log(e);
       }
     }
-          </script>
-        </html>
+  </script>
+</html>
+
 `;
